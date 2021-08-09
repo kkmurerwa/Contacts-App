@@ -1,14 +1,14 @@
 package com.example.mycontacts.data.Dao
 
-import androidx.room.Dao
-import androidx.room.Insert
+
 
 
 @Dao
-interface ContactDao {
+interface ContactDao{
 
-    @Insert(onConflict = onConflictStrategy.IGNORE)
-    suspend fun addContact(contact: Contact)
+    @Insert(onConflict= androidx.room.OnConflictStrategy.IGNORE)
+    suspend fun addContact(contact:Contact)
+
 
 
 }
