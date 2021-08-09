@@ -1,4 +1,4 @@
-package com.example.mycontacts.data.Dao
+package com.example.mycontacts.data.Entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
