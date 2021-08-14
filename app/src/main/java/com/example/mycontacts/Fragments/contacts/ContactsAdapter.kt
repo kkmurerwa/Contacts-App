@@ -34,7 +34,7 @@ class ContactsAdapter: RecyclerView.Adapter<ContactsAdapter.MyViewHolder>() {
         holder.itemView.save_contact_as.text=currentData.number.toString()
     }
 
-    fun setDtails(contact: List<Contact>){
+    fun setDetails(contact: List<Contact>){
         this.contactList=contact
         notifyDataSetChanged()
     }
