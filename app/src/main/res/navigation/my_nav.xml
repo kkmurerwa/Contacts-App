@@ -6,14 +6,14 @@
             app:startDestination="@id/contactsFragment">
 
     <fragment android:id="@+id/contactsFragment"
-              android:name="com.example.mycontacts.Fragments.ContactsFragment"
+              android:name="com.example.mycontacts.Fragments.contacts.ContactsFragment"
               android:label="Contacts"
               tools:layout="@layout/fragment_contacts">
         <action android:id="@+id/action_contactsFragment_to_addFragment"
                 app:destination="@id/addFragment"/>
     </fragment>
     <fragment android:id="@+id/addFragment"
-              android:name="com.example.mycontacts.Fragments.AddFragment"
+              android:name="com.example.mycontacts.Fragments.Add.AddFragment"
               android:label="Add"
               tools:layout="@layout/fragment_add">
         <action android:id="@+id/action_addFragment_to_contactsFragment"

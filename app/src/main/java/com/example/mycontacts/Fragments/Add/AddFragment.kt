@@ -1,4 +1,4 @@
-package com.example.mycontacts.Fragments
+package com.example.mycontacts.Fragments.Add
 
 import android.os.Bundle
 import android.text.Editable
@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.mycontacts.R
@@ -52,8 +51,6 @@ class AddFragment : Fragment() {
         }else{
             Toast.makeText(requireContext(),"Fill All Details",Toast.LENGTH_LONG).show()
         }
-
-
 
 
     }
