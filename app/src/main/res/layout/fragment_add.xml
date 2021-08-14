@@ -10,7 +10,7 @@
     <TextView
             android:text="Contact Name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/editContactName"
+            android:layout_height="wrap_content" android:id="@+id/ContactName"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.235"/>
@@ -18,8 +18,8 @@
             android:text="Email Adress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editEmailAdress"
-            app:layout_constraintTop_toBottomOf="@+id/editContactName"
+            android:id="@+id/EmailAdress"
+            app:layout_constraintTop_toBottomOf="@+id/ContactName"
             android:layout_marginTop="28dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
@@ -27,10 +27,10 @@
             android:text="Phone Number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editPhoneNumber"
+            android:id="@+id/PhoneNumber"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editEmailAdress"
+            app:layout_constraintTop_toBottomOf="@+id/EmailAdress"
             android:layout_marginTop="24dp"/>
     <Button
             android:text="Save"
