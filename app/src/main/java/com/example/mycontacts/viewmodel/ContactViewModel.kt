@@ -1,4 +1,4 @@
-package com.example.mycontacts.data
+package com.example.mycontacts.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
