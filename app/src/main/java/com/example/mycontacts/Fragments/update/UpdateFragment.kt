@@ -1,12 +1,11 @@
 package com.example.mycontacts.Fragments.update
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -42,6 +41,7 @@ class UpdateFragment : Fragment() {
             Updates()
         }
 
+        setHasOptionsMenu(true)
         return view
 
     }
@@ -66,6 +66,35 @@ class UpdateFragment : Fragment() {
     }
     private fun checkDetails(name:String,email:String,number: Editable):Boolean{
         return !(TextUtils.isEmpty(name) && TextUtils.isEmpty(email) && number.isEmpty())
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.delete){
+            deleteUser()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    private fun deleteUser() {
+        val alert= AlertDialog.Builder(requireContext())
+        alert.setPositiveButton("Yes"){_,_->
+
+            myContactViewModel.deleteContact(args.currentContact)
+            Toast.makeText(requireContext(),"Successfully deleted: ${args.currentContact.name}",Toast.LENGTH_SHORT).show()
+
+        }
+        alert.setNegativeButton("No"){_,_->}
+        alert.setTitle("Delete ${args.currentContact.name}?")
+        alert.setMessage("Are you sure you want to delete ${args.currentContact.name}?")
+        alert.create().show()
+
+
+
+
     }
 
 
