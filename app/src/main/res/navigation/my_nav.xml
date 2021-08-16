@@ -2,8 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:app="http://schemas.android.com/apk/res-auto"
             xmlns:tools="http://schemas.android.com/tools"
-            android:id="@+id/my_nav"
-            app:startDestination="@id/contactsFragment">
+            android:id="@+id/updateFragment"
+            app:startDestination="@id/contactsFragment" android:label="Update">
 
     <fragment android:id="@+id/contactsFragment"
               android:name="com.example.mycontacts.Fragments.contacts.ContactsFragment"
@@ -27,5 +27,6 @@
               tools:layout="@layout/fragment_update">
         <action android:id="@+id/action_updateFragment_to_contactsFragment"
                 app:destination="@id/contactsFragment"/>
+        <argument android:name="currentContact" app:argType="com.example.mycontacts.data.Entity.Contact"/>
     </fragment>
 </navigation>

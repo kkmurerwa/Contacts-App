@@ -10,7 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mycontacts.R
-import com.example.mycontacts.data.ContactViewModel
+import com.example.mycontacts.viewmodel.ContactViewModel
 import kotlinx.android.synthetic.main.fragment_contacts.view.*
 
 

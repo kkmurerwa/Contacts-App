@@ -10,4 +10,8 @@ class ContactRepository(private val contactDao: ContactDao) {
     suspend fun addContact(contact:Contact){
         contactDao.addContact(contact)
     }
+
+    suspend fun updateContact(contact: Contact){
+        contactDao.updateContact(contact)
+    }
 }

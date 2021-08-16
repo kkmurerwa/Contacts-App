@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.view.menu.ActionMenuItemView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mycontacts.R
 import com.example.mycontacts.data.Entity.Contact
@@ -32,6 +33,13 @@ class ContactsAdapter: RecyclerView.Adapter<ContactsAdapter.MyViewHolder>() {
         holder.itemView.contactsaved_as.text=currentData.name
         holder.itemView.save_email_address.text=currentData.email
         holder.itemView.save_contact_as.text=currentData.number.toString()
+
+        holder.itemView.myrowrepresentation.setOnClickListener{
+            val action=ContactsFragmentDirections.actionContactsFragmentToUpdateFragment(currentData)
+            holder.itemView.findNavController().navigate(action)
+        }
+
+
     }
 
     fun setDetails(contact: List<Contact>){

@@ -11,14 +11,14 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.mycontacts.R
-import com.example.mycontacts.data.ContactViewModel
 import com.example.mycontacts.data.Entity.Contact
+import com.example.mycontacts.viewmodel.ContactViewModel
 import kotlinx.android.synthetic.main.fragment_add.*
 import kotlinx.android.synthetic.main.fragment_add.view.*
 
 class AddFragment : Fragment() {
 
-    private lateinit var myContactViewModel:ContactViewModel
+    private lateinit var myContactViewModel: ContactViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
