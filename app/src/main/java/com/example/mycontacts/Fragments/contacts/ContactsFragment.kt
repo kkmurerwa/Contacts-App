@@ -1,10 +1,10 @@
 package com.example.mycontacts.Fragments.contacts
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
@@ -38,7 +38,41 @@ class ContactsFragment : Fragment() {
             findNavController().navigate(R.id.action_contactsFragment_to_addFragment)
         }
 
+
+        setHasOptionsMenu(true)
+
+
         return view
 
     }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.delete_menu,menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        if(item.itemId ==R.id.delete) {
+            deleteAllContacts()
+        }
+    return super.onOptionsItemSelected(item)
+
+    }
+
+    private fun deleteAllContacts() {
+        val alert= AlertDialog.Builder(requireContext())
+        alert.setPositiveButton("Yes"){_,_->
+
+            myContactViewModel.deleteAllContacts()
+            Toast.makeText(requireContext(),"Successfully All Contacts", Toast.LENGTH_SHORT).show()
+
+            findNavController().navigate(R.id.action_updateFragment_to_contactsFragment)
+
+        }
+        alert.setNegativeButton("No"){_,_->}
+        alert.setTitle("Delete All Contacts")
+        alert.setMessage("Are you sure you want to delete all Contacts?")
+        alert.create().show()
+    }
+
 }

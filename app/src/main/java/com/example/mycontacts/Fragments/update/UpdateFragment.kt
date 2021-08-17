@@ -8,7 +8,7 @@ import android.view.*
 import androidx.fragment.app.Fragment
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import androidx.navigation.fragment.findNavController
+//import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mycontacts.R
 import com.example.mycontacts.data.Entity.Contact
@@ -50,7 +50,7 @@ class UpdateFragment : Fragment() {
         val email=updateEmailAdress.text.toString()
         val number=Integer.parseInt(updatePhoneNumber.text.toString())
 
-        if(checkDetails(name,email,updatePhoneNumber.text)){
+        if(checkDetails(name,email,number = updatePhoneNumber.text as Editable)){
 
             val newContactUpdate = Contact(args.currentContact.id,name, email, number)
 
@@ -59,7 +59,7 @@ class UpdateFragment : Fragment() {
             Toast.makeText(requireContext(),"Contact Update Successfully", Toast.LENGTH_SHORT).show()
 
 
-            findNavController().navigate(R.id.action_updateFragment_to_contactsFragment)
+     //       findNavController().navigate(R.id.action_updateFragment_to_contactsFragment)
         }else{
             Toast.makeText(requireContext(),"Fill the details to update contact", Toast.LENGTH_SHORT).show()
         }
@@ -86,16 +86,14 @@ class UpdateFragment : Fragment() {
             myContactViewModel.deleteContact(args.currentContact)
             Toast.makeText(requireContext(),"Successfully deleted: ${args.currentContact.name}",Toast.LENGTH_SHORT).show()
 
+        findNavController().navigate(R.id.action_updateFragment_to_contactsFragment)
+
         }
         alert.setNegativeButton("No"){_,_->}
         alert.setTitle("Delete ${args.currentContact.name}?")
         alert.setMessage("Are you sure you want to delete ${args.currentContact.name}?")
         alert.create().show()
 
-
-
-
     }
-
 
 }
